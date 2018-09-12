@@ -12,17 +12,19 @@ function __autoload($classname)
     require_once($filename);
 }
 
+function checkIfValid(Customer $customer, array $books): bool
+{
+    return $customer->getAmountToBorrow() >= count($books);
+}
+
 $book1 = new Book(1, "Red Rising", "Pierce Brown", 12);
 $book2 = new Book(2, "Morning Star", "Pierce Brown", 1);
 
-//$string = (string) $book1; // Title - Author Not Available
-
-//echo $string;
-
-$customer1 = new Customer(1, 'Cody', 'Benner', 'strykstaguy@gmail.com');
-$customer2 = new Customer(2, 'Josh', 'Wilson', 'joshwilson0011@gmail.com');
-Customer::getLastId();
-echo $customer1::getLastId();
+$customer1 = new Basic(5, 'John', 'Doe', 'johndoe@mail.com');
+var_dump(checkIfValid($customer1,
+    [$book1])); // ok
+$customer2 = new Customer(7, 'James', 'Bond', 'james@bond.com');
+var_dump(checkIfValid($customer2, [$book1])); // fails
 //echo $book1->getPrintableTitle();
 /*
 if ($book1->getCopy()) {
