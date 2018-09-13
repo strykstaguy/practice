@@ -21,8 +21,10 @@ function checkIfValid(Customer $customer, array $books): bool
 $book1 = new Book(1, "Red Rising", "Pierce Brown", 12);
 $book2 = new Book(2, "Morning Star", "Pierce Brown", 1);
 
-$customer1 = new Basic(5, 'John', 'Doe', 'johndoe@mail.com');
-var_dump(checkIfValid($customer1, [$book1])); // ok
+$basic1 = new Basic(1, "name", "surname", "email");
+$basic2 = new Basic(null, "name", "surname", "email");
+var_dump($basic1->getId()); // 1
+var_dump($basic2->getId()); // 2
 
 //$customer2 = new Customer(7, 'James', 'Bond', 'james@bond.com');
 //var_dump(checkIfValid($customer2, [$book1])); // fails
