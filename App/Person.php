@@ -13,7 +13,7 @@ class Person {
     protected $email;
 
     public function __construct(
-        int $id,
+        ?int $id,
         string $firstname,
         string $surname,
         string $email

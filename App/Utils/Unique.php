@@ -7,7 +7,7 @@ trait Unique
     private static $lastId = 0;
     protected $id;
 
-    public function setId(int $id)
+    public function setId(?int $id)
     {
         if (empty($id)) {
             $this->id = ++self::$lastId;
