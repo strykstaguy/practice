@@ -27,7 +27,7 @@ class Basic extends Person implements Customer
         echo "Paying $amount.";
     }
 
-    public function isExtentOfTaxes(): bool
+    public function isExemptOfTaxes(): bool
     {
         return false;
     }

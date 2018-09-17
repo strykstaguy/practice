@@ -6,5 +6,5 @@ interface Payer
 {
     public function pay(float $amount);
 
-    public function isExtentOfTaxes(): bool;
+    public function isExemptOfTaxes(): bool;
 }
